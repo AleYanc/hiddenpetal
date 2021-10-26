@@ -1,8 +1,12 @@
 <div class="frase-container">
   <h1>Última frase utilizada:</h1>
-  <p class="frase">
+  <% if @frase %>
+    <p class="frase">
     <%=@frase.frase%>
   </p>
+  <%else%>
+  <p class="frase">No hay frases actualmente</p>
+  <% end %>
   <%= link_to 'Nueva frase', new_frase_path, class: 'frase-link' %>
 </div>
 
