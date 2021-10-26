@@ -1,0 +1,34 @@
+<section class="section-one">
+  <div class="section-one-heading">
+    <h1>la tienda donde todo es artesanal</h1>
+  </div>
+  <div class="store-preview">
+    <%@store_preview.each do |product|%>
+      <div class="product-card">
+        <div class="product-image">
+          <%=image_tag product.image, class:'product-image-content'%>
+        </div>
+        <div class="product-text">
+          <p class="product-name"><%=product.name%></p>
+          <p class="product-price">$<%=product.price%></p>
+          <%=link_to 'Ver producto', "producto/#{product.id}", class: 'product-link'%>
+        </div>
+      </div>
+    <%end%>
+  </div>
+  <div class="slider">
+    <div class="slides">
+      <%@store_preview.each.with_index do |product, index|%>
+        <div class="slide-<%=index + 1%>">
+          <div class="slide-content">
+          <div class="slide-bg-dark"></div>
+            <%=image_tag product.image, class:'slide-image'%>
+            <div class="slide-text">
+              <%=link_to product.name, "producto/#{product.id}"%>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</section>

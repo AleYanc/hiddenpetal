@@ -1,0 +1,25 @@
+<div class="frase-form-container">
+  <h1>Nueva frase</h1>
+  <%= form_for(@frase, :html => {class: 'frase-form', role: 'form'}) do |form| %>
+    <% if frase.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(frase.errors.count, "error") %> prohibited this frase from being saved:</h2>
+
+        <ul>
+          <% frase.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :frase %>
+      <%= form.text_area :frase, class: 'frase-textarea'%>
+    </div>
+
+    <div class="actions">
+      <%= form.submit 'Crear', class: 'frase-submit'%>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<section class="section-three">
+  <div class="section-three-container">
+    <div class="image"></div>
+    <div class="text-container">
+      <div class="text">
+        <h1><%=@noticia.title%></h1>
+        <small>Editado el <span><%=@noticia.updated_at.strftime("%d/%m a las %H:%M")%></span> por Mica</small>
+        <p><%=@noticia.desc%></p>
+      </div>
+    </div>
+  </div>
+</section>

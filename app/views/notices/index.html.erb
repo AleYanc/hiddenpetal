@@ -1,0 +1,9 @@
+<div class="notices-container">
+  <h1>Última noticia publicada :</h1>
+  <div class="notice">
+    <p><%=@notice.title%></p>
+    <p><%=@notice.desc%></p>
+    <%= link_to 'Actualizar', edit_notice_path(@notice), class:'notice-btn' %>
+  </div>
+  <%= link_to 'Crear nueva noticia', new_notice_path, class:'notice-btn' %>
+</div>

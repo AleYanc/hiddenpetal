@@ -1,0 +1,29 @@
+<div class="navbar-header">
+  <div class="navbar-menu">
+    <%=link_to 'Inicio', root_path%>
+    <a href="">ustedes</a>
+    <a href="">contacto</a>
+    <a href="">sobre mi</a>
+    <%=link_to 'Tienda', store_path%>
+  </div>
+  <div class="burger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="responsive-navbar">
+  <div class="menu-background"></div>
+  <div class="menu-links">
+     <%=link_to 'Inicio', root_path, class: 'responsive-menu-links'%>
+      <a href="" class="responsive-menu-links">ustedes</a>
+      <a href="" class="responsive-menu-links">contacto</a>
+      <a href="" class="responsive-menu-links">sobre mi</a>
+      <%=link_to 'Tienda', store_path, class: 'responsive-menu-links'%>
+  </div>
+</div>
+  <div class="navbar-items">
+    <div class="logo">
+      <img src="../../assets/logo.png" alt="">
+    </div>
+  </div>
+</div>

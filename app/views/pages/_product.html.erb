@@ -1,0 +1,15 @@
+<%obj.each do |product|%>
+  <div class="product-card">
+    <div class="image-container">
+      <div class="product-card-description">
+        <%=link_to '', "producto/#{product.id}", class: 'product-link'%>
+          <p class="description">
+            Ir al producto
+          </p>
+      </div>
+      <%=image_tag product.image, class: 'product-card-img'%>
+    </div>
+    <p class="product-card-name"><%=product.name%></p>
+    <p class="product-card-price">$<%=product.price%></p>
+  </div>
+<%end%>

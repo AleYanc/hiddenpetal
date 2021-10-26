@@ -1,0 +1,44 @@
+<% if @user.errors.any? %>
+<div class="alert alert-danger text-center">
+  <h2 class="error-msg-heading">The following errors prevented the user from getting created</h2>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li>
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="user-form-container">
+    <%= form_for(@user, :html => {class: 'form-user', role: 'form'}) do |f| %>
+      <div class="form-group">
+        <div class="control-label">
+          <%= f.label :name %>
+        </div>
+        <div>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'User name', autofocus: true%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label">
+          <%= f.label :email%><br/>
+        </div>
+        <div>
+          <%= f.email_field :email, class: 'form-control', placeholder: 'User email'%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label">
+          <%= f.label :password%><br/>
+        </div>
+        <div>
+          <%= f.password_field :password, class: 'form-control', placeholder: 'Enter password'%>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: 'btn btn-primary btn-lg submitbtn')%>
+      </div>
+    <%end%>
+</div>

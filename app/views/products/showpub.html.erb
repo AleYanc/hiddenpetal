@@ -1,0 +1,24 @@
+<div class="public-product-container">
+  <div class="public-product-left">
+    <div class="product-image">
+      <%=image_tag @product.image, class:'product-img-pub'%>
+    </div>
+    <div class="product-desc">
+    <%if @product.description == ""%>
+      <p>Descripción en proceso   ❤️</p>
+    <%else%>
+      <p><%=@product.description%></p>
+    <%end%>
+      
+    </div>
+  </div>
+  <div class="public-product-right">
+    <div class="right-content">
+      <h2 class="product-name"><%=@product.name%></h2>
+      <p class="product-price">$<%=@product.price%></p>
+      <button class="cart-btn"><%=link_to 'Consultar al Whatsapp', "#{@product.link}"%></button>
+    </div>
+  </div>
+</div>
+
+<%=render 'layouts/footer'%>

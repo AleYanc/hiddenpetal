@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div class="products-index-heading-container">
+  <h1 class="product-index-heading">Productos disponibles</h1>
+
+  <%= link_to 'Nuevo producto', new_product_path, class: 'btn-product-new' %>
+</div>
+
+<dic class="products-container">
+  <%@products.each do |product|%>
+    <div class="product-card">
+      <div class="img">
+        <%=image_tag product.image%>
+      </div>
+      <p class="product-name"><%=product.name%></p>
+      <p class="product-price">$ <%=product.price%></p>
+      <div class="product-actions">
+        <p><%= link_to 'Mostrar', product, class: 'btn-primary' %></p>
+        <p><%= link_to 'Editar', edit_product_path(product), class: 'btn-alert' %></p>
+        <p><%= link_to 'Eliminar', product, class: 'btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></p>
+      </div>
+    </div>
+  <%end%>
+</dic>

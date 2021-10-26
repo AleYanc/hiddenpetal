@@ -1,0 +1,13 @@
+<div class="tienda-container">
+  <div class="tienda-heading">
+    <div class="bg-black"></div>
+    <h1>Bienvenido a la tienda</h1>
+    <small>Descubrí todos los productos de Hidden Petal</small>
+  </div>
+  <div class="productos-container">
+    <%=render 'product', obj: @products%>
+  </div>
+  <%= will_paginate @products %>
+</div>
+
+<%=render 'layouts/footer'%>
