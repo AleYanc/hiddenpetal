@@ -6,7 +6,11 @@
     <%@store_preview.each do |product|%>
       <div class="product-card">
         <div class="product-image">
-          <%=image_tag product.image, class:'product-image-content'%>
+          <%if product.image%>
+            <%=image_tag product.image, class:'product-image-content'%>
+          <%else%>
+            <p>no image</p>
+          <%end%>
         </div>
         <div class="product-text">
           <p class="product-name"><%=product.name%></p>
