@@ -26,7 +26,7 @@
         <div class="slide-<%=index + 1%>">
           <div class="slide-content">
           <div class="slide-bg-dark"></div>
-            <%=image_tag product.image, class:'slide-image'%>
+            <img src="<%=product.img%>" alt="">
             <div class="slide-text">
               <%=link_to product.name, "producto/#{product.id}"%>
             </div>
