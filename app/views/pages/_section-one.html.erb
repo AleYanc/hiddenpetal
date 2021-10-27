@@ -7,7 +7,7 @@
       <div class="product-card">
         <div class="product-image">
           <%if product.image%>
-            <%=image_tag product.image, class:'product-image-content'%>
+            <img src="<%=product.img%>" alt="">
           <%else%>
             <p>no image</p>
           <%end%>

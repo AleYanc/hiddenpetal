@@ -10,8 +10,8 @@
   <%@products.each do |product|%>
     <div class="product-card">
       <div class="img">
-        <%if product.image%>
-          <%=image_tag product.image%>
+        <%if product.img%>
+          <img src="<%=product.img%>" alt="">
         <%else%>
           <p>Sin imágen</p>
         <%end%>
