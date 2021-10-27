@@ -813,6 +813,12 @@ body {
         height: 350px;
         position: relative;
 
+        img {
+          width: 350px;
+          height: 350px;
+          object-fit: cover;
+        }
+
         &:hover {
           .product-card-description {
             height: 100%;
