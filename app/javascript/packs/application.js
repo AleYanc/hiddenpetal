@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '../js/burgermenu'
 import '../js/carousel-anim'
+require('jquery')
 
 Rails.start()
 Turbolinks.start()
