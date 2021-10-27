@@ -2046,6 +2046,77 @@ body {
       left: 0%;
     }
   }
+  .section-two {
+  
+    .section-two-content {
+      .two {
+        height: 95%;
+      }
+  
+      .two {
+  
+        .frases-header {
+          p {
+            background-color: #afd192;
+            padding: 2px;
+            display: block;
+            width: 42%;
+            margin: 15px 15px;
+          }
+        }
+        .frase {
+          p {
+            padding: 5px;
+            font-size: 2.6rem;
+            margin: 10px;
+          }
+        }
+      }
+  
+      .three {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-evenly;
+  
+        .foto {
+          width: 96%;
+          height: 330px;
+          background-image: asset-url("foto1.jpeg");
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+  
+        .text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: space-evenly;
+  
+          p {
+            display: inline-block;
+            font-size: 1.15rem;
+            background-color: #e8b2ed;
+            padding: 5px;
+            margin: 5px;
+          }
+        }
+  
+        &:before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 800px;
+          top: 0;
+          right: -100%;
+          background-color: #d5e8c5;
+          z-index: -1;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 360px) {
