@@ -16,7 +16,7 @@
     <div class="right-content">
       <h2 class="product-name"><%=@product.name%></h2>
       <p class="product-price">$<%=@product.price%></p>
-      <button class="cart-btn"><%=link_to 'Consultar al Whatsapp', "#{@product.link}"%></button>
+      <%=link_to 'Consultar al Whatsapp', "#{@product.link}", class: 'cart-btn'%>
     </div>
   </div>
 </div>

@@ -306,25 +306,23 @@ body {
       .cart-btn {
         width: 100%;
         background-color: #826d5a;
+        display: block;
         text-align: center;
         border: none;
         padding: 10px;
         cursor: pointer;
-
-        a {
-          font-weight: 600;
-          color: #fff;
-          font-size: 1.2rem;
-          font-style: italic;
-          text-decoration: none;
-        }
+        font-weight: 600;
+        color: #fff;
+        font-size: 1.2rem;
+        font-style: italic;
+        text-decoration: none;
       }
     }
   }
 }
 /* Home page */
 .section-one {
-  height: 650px;
+  height: 550px;
   width: 80%;
   margin: 0 auto;
   display: flex;
