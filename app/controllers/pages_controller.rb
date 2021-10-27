@@ -9,6 +9,8 @@ class PagesController < ApplicationController
   end
   def about
   end
+  def working
+  end
   def forbidden
   end
 end
