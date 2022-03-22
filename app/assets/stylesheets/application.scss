@@ -1,6 +1,7 @@
 /* Imports */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+Pro:ital,wght@0,200;0,400;1,200&display=swap");
 @import './partials/*';
+@import './pages/*';
 
 /* Global */
 body {
@@ -18,8 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  width: 100px;
-  height: 50px;
+  padding: 15px;
 }
 .btn-alert {
   color: #333;

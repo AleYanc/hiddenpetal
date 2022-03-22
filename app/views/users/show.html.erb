@@ -1,14 +1,27 @@
-<p id="notice"><%= notice %></p>
+<%if @user.admin?%>
+  <div class="admin-user-wrapper">
+    <h2>Bienvenido, <%=@user.name%></h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+    <div class="actions">
+      <p>Acciones disponibles</p>
+      <%=link_to 'Crear nueva frase', new_frase_path, class:'admin-btn'%>
+      <%=link_to 'Crear nueva noticia', new_notice_path, class:'admin-btn'%>
+      <%=link_to 'Crear nuevo producto', new_product_path, class:'admin-btn'%>
+      <%=link_to 'Administrar usuarios', users_path, class:'admin-btn'%>
+      <%= link_to 'Editar usuario', edit_user_path(@user), class: 'admin-btn' %>
+      <%=link_to 'Cerrar sesión', logout_path, method: :delete, class:'admin-btn'%>
+    </div>
+    <%= link_to 'Volver', root_path, class: 'btn-danger' %>
+  </div>
+<%else%>
+  <div class="common-user-wrapper">
+    <h2>Bienvenido, <%=@user.name%></h2>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+    <div class="actions">
+      <p>Acciones disponibles</p>
+      <%=link_to 'Cerrar sesión', logout_path, method: :delete, class:'btn-primary'%>
+      <%= link_to 'Editar usuario', edit_user_path(@user), class: 'btn-primary' %>
+    </div>
+    <%= link_to 'Volver', root_path, class: 'btn-danger' %>
+  </div>
+<%end%>
