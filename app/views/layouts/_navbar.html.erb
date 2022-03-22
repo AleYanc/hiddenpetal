@@ -1,30 +1,20 @@
 <div class="navbar-header">
-  <div class="navbar-menu">
-    <%=link_to 'Inicio', root_path%>
-    <%=link_to 'Ustedes', trabajando_path%>
-    <%=link_to 'Contacto', trabajando_path%>
-    <%=link_to 'Sobre mi', trabajando_path%>
-    <%=link_to 'Tienda', store_path%>
+  <div class="navbar-menu-left">
+    <%=image_tag 'logo.png', class: 'logo-image'%>
+    <%=link_to 'Inicio' , root_path%>
+      <%=link_to 'Ustedes' , trabajando_path%>
+        <%=link_to 'Contacto' , trabajando_path%>
+          <%=link_to 'Sobre mi' , trabajando_path%>
+            <%=link_to 'Tienda' , store_path%>
   </div>
-  <div class="burger-menu" id="burger-menu">
-    <div class="buttonclass">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <div class="responsive-navbar">
-  <div class="menu-background"></div>
-  <div class="menu-links">
-    <%=link_to 'Inicio', root_path, class: 'responsive-menu-links'%>
-    <%=link_to 'Ustedes', trabajando_path, class: 'responsive-menu-links'%>
-    <%=link_to 'Contacto', trabajando_path, class: 'responsive-menu-links'%>
-    <%=link_to 'Sobre mi', trabajando_path, class: 'responsive-menu-links'%>
-    <%=link_to 'Tienda', store_path, class: 'responsive-menu-links'%>
-  </div>
-</div>
-  <div class="navbar-items">
-    <div class="logo">
-    </div>
+  <div class="navbar-menu-right">
+    <%if current_user%>
+      <h3 class="username"><%=current_user.name.capitalize%></h3>
+      <%=link_to user_path(current_user), class: 'link_to_user' do %>
+        <i class="fa-solid fa-user"></i>
+      <% end %>
+    <%else%>
+      <%=link_to 'Iniciar Sesión' , login_path, class:'navbar-login-btn'%>
+    <%end%>
   </div>
 </div>

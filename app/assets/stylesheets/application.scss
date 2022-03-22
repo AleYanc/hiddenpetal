@@ -1,5 +1,6 @@
 /* Imports */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+Pro:ital,wght@0,200;0,400;1,200&display=swap");
+@import './partials/*';
 
 /* Global */
 body {
@@ -683,62 +684,6 @@ body {
   background-color: #e8b2ed;
   padding: 5px;
   color: #333;
-}
-
-/* Navbar */
-.navbar-header {
-  width: 100vw;
-  height: 21vh;
-  background: linear-gradient(180deg, #826d5a 50%, #fff 50%);
-  position: relative;
-
-  .navbar-menu {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    height: 40px;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    a {
-      text-align: center;
-      width: 20%;
-      text-decoration: none;
-      color: rgb(50, 50, 50);
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      padding: 10px;
-
-      &:hover {
-        background-color: rgba($color: #826d5a, $alpha: 0.6);
-        border-top: 0.7px solid #333;
-        border-bottom: 0.7px solid #333;
-      }
-    }
-  }
-
-  .navbar-items {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .logo {
-      width: 110px;
-      height: 110px;
-      background-image: asset-url('logo.png');
-      background-position: center center;
-      background-size: cover;
-    }
-  }
-}
-.responsive-navbar {
-  display: none;
 }
 
 /* Home Section */
