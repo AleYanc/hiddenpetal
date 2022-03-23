@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def index_public
-    @products = Product.all
+    @products = Product.filter(params.slice(:category))
   end
 
   # GET /products/1 or /products/1.json
@@ -33,36 +33,35 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: "Product was successfully created." }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.save
+      flash[:success] = "Producto creado con éxito"
+      redirect_to @product
+    else
+      flash[:danger] = "Hubo un error al crear el producto. Error: #{@product.errors}"
+      render :new
     end
   end
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: "Product was successfully updated." }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.update(product_params)
+      flash[:success] = "Producto actualizado con éxito"
+      redirect_to @product
+    else
+      flash[:danger] = "Hubo un error al crear el producto. Error: #{@product.errors}"
+      render 'new'
     end
   end
 
   # DELETE /products/1 or /products/1.json
   def destroy
-    @product.destroy
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
-      format.json { head :no_content }
+    if @product.destroy
+      flash[:success] = "El producto fue eliminado correctamente"
+      redirect_to products_path
+
+    else
+      flash[:danger] = "Hubo un error al intentar eliminar el producto"
+      redirect_to products_path
     end
   end
 

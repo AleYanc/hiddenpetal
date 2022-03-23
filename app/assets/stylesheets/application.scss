@@ -11,6 +11,29 @@ body {
   user-select: none;
 }
 
+/* Flash messages */
+.flash-msg {
+  width: 50vw;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flash-success {
+  background-color: rgb(175, 255, 175);
+  color: #333;
+}
+
+.flash-danger {
+  background-color: rgb(255, 125, 125);
+  color: #333;
+}
+
 /* Buttons */
 .btn-alert,
 .btn-danger,
@@ -20,6 +43,8 @@ body {
   justify-content: center;
   text-decoration: none;
   padding: 15px;
+  border: none;
+  cursor: pointer;
 }
 .btn-alert {
   color: #333;
@@ -573,168 +598,6 @@ body {
   width: 100vw;
   height: 100vh;
   margin: 0;
-}
-
-/* Tienda */
-.tienda-container {
-  width: 100vw;
-  height: auto;
-
-  .tienda-heading {
-    width: 100vw;
-    height: 200px;
-    background-image: asset-url("wallpaper.jpg");
-    background-position: center center;
-    margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    color: #ececec;
-    position: relative;
-
-    .bg-black {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba($color: #333, $alpha: .5);
-      z-index: 1;
-    }
-
-    h1 {
-      z-index: 2;
-      font-size: 4rem;
-      margin: 0;
-    }
-
-    small {
-      z-index: 2;
-      font-size: 1.1rem;
-      font-style: italic;
-      font-weight: 600;
-    }
-  }
-
-  .productos-container {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .product-card {
-      width: 350px;
-      height: 450px;
-      position: relative;
-      margin: 10px 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: #ececec;
-
-      .image-container {
-        width: 350px;
-        height: 350px;
-        position: relative;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        &:hover {
-          .product-card-description {
-            height: 100%;
-          }
-        }
-
-        .product-card-description {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 0;
-          transition: all .2s;
-          background-color: rgba($color: #ececec, $alpha: .8);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-
-          .product-link {
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;
-          }
-
-          p {
-            width: 70%;
-            margin: 0 auto;
-            color: #333;
-            background-color: #ececec;
-            padding: 15px 10px;
-            text-align: center;
-          }
-        }
-        .product-card-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-  }
-
-  .pagination {
-    margin: 10px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-      color: #333;
-      border: 1px solid #ececec;
-      background-color: #e8b2ed;
-      padding: 5px 10px;
-      transition: all .2s;
-      &:hover {
-        background-color: #b487b8;
-      }
-    }
-
-    em {
-      font-weight: 600;
-      color: #333;
-      border: 1px solid #ececec;
-      padding: 5px 10px;
-      background-color: #e8b2ed;
-      transition: all .2s;
-      &:hover {
-        background-color: #b487b8;
-      }
-    }
-
-    a {
-      text-decoration: none;
-      color: #333;
-      border: 1px solid #ececec;
-      padding: 5px 10px;
-      background-color: #e8b2ed;
-      transition: all .2s;
-      &:hover {
-        background-color: #b487b8;
-      }
-    }
-  }
 }
 
 /* Footer */

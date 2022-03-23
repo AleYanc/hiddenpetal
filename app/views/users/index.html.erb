@@ -1,32 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="users-wrapper">
+  <h1>Usuarios</h1>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Creación</th>
+        <th>Rol</th>
+        <th>Acciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
-<%if logged_in?%>
-  <%= link_to 'Log out', logout_path, method: :delete, class: 'btn btn-danger m-2' %>
-<%end%>
+    </thead>
+  
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.created_at.strftime("%d/%m/%Y") %></td>
+          <td>
+            <%if user.admin?%>
+              <p style="color: rgb(93, 117, 255); font-weight: bold;">Admin</p>
+            <%else%>
+              <p style="color: rgb(93, 117, 255); font-weight: bold;">Normal</p>
+            <%end%>
+          </td>
+          <td>
+            <%= link_to 'Ver', user, class:'btn-primary' %>
+            <%= link_to 'Editar', edit_user_path(user), class:'btn-primary' %>
+            <%= link_to 'Borrar', user, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<div class="filters">
+  <h1>Filtros</h1>
+  <%= form_tag(store_path, method: :get, class:'filter-form') do %>
+    <div class="field">
+      <%= label_tag 'Categoria' %>
+      <%= select_tag(:category, raw('
+      <option>Scrunchies</option>
+      <option>Muñecos</option>
+      <option>Toallas & Discos</option>
+      <option>Bolsos & Neceseres</option>
+      <option>Hogar & Deco</option>
+      <option>Otoño & Invierno</option>
+      <option>Primavera & Verano</option>
+      '), :prompt => 'Seleccionar categoría') %>
+    </div>
+    <div class="field">
+      <%= label_tag 'Precio' %>
+      <%= select_tag(:order, raw('
+        <option>Mayor a menor</option>
+        <option>Menor a mayor</option>
+      '), :prompt => 'Filtrar por precio')%>
+    </div>
+    <%= submit_tag 'Aplicar filtros', class:'btn-primary' %>
+    <%=link_to 'Borrar filtros', store_path, class:'btn-danger'%>
+  <% end %>
+</div>

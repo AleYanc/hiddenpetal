@@ -58,6 +58,15 @@
         border-bottom: 1px solid rgb(150, 150, 150);
         max-width: 235px;
       }
+
+      
+      select {
+        border: none;
+        width: 220px;
+        height: 35px;
+        border-radius: 15px;
+        text-align: center;
+      }
     }
     .actions {
       input {

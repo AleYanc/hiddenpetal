@@ -16,6 +16,13 @@
     <div class="right-content">
       <h2 class="product-name"><%=@product.name%></h2>
       <p class="product-price">$<%=@product.price%></p>
+      <%if @product.stock < 10%>
+        <p>Stock bajo</p>
+      <%elsif @product.stock > 10%>
+        <p>En stock</p>
+      <%elsif @product.stock == 0%>
+        <p>Sin stock</p>
+      <%end%>
       <%=link_to 'Consultar al Whatsapp', "#{@product.link}", class: 'cart-btn'%>
     </div>
   </div>
