@@ -4,12 +4,48 @@
 
     <div class="actions">
       <p>Acciones disponibles</p>
-      <%=link_to 'Crear nueva frase', new_frase_path, class:'admin-btn'%>
-      <%=link_to 'Crear nueva noticia', new_notice_path, class:'admin-btn'%>
-      <%=link_to 'Crear nuevo producto', new_product_path, class:'admin-btn'%>
-      <%=link_to 'Administrar usuarios', users_path, class:'admin-btn'%>
-      <%= link_to 'Editar usuario', edit_user_path(@user), class: 'admin-btn' %>
-      <%=link_to 'Cerrar sesión', logout_path, method: :delete, class:'admin-btn'%>
+      <table>
+
+        <tr>
+          <th>Usuarios</th>
+          <th>Productos</th>
+          <th>Frases</th>
+          <th>Noticias</th>
+        </tr>
+
+        <tr>
+          <td>
+            <%=link_to 'Administrar usuarios', users_path, class:'admin-btn'%>
+          </td>
+          <td>
+            <%=link_to 'Crear nuevo producto', new_product_path, class:'admin-btn'%>
+          </td>
+          <td>
+            <%=link_to 'Crear nueva frase', new_frase_path, class:'admin-btn'%>
+          </td>
+          <td>
+            <%=link_to 'Crear nueva noticia', new_notice_path, class:'admin-btn'%>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <%= link_to 'Editar usuario', edit_user_path(@user), class: 'admin-btn' %>
+          </td>
+          <td>
+            <%=link_to 'Administrar productos', products_path, class:'admin-btn'%>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <%=link_to 'Cerrar sesión', logout_path, method: :delete, class:'admin-btn'%>
+          </td>
+        </tr>
+
+      </table>
     </div>
     <%= link_to 'Volver', root_path, class: 'btn-danger' %>
   </div>

@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '../js/burgermenu'
 import '../js/carousel-anim'
+import '../js/flash-msg'
 require('jquery')
 
 Rails.start()

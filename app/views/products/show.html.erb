@@ -1,10 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <div class="show-product-container">
   <div class="show-product">
-    <img src="" alt="">
+    <img src="<%=@product.img%>" alt="" style="width: 250px;">
     <p class="show-name">Nombre: <%=@product.name%></p>
     <p class="show-name">Precio: <%=@product.price%></p>
+    <p class="show-name">Stock: <%=@product.stock%></p>
     <p class="show-name"><%=link_to 'Link del producto', "#{@product.link}"%></p>
     <div class="product-actions">
         <p><%= link_to 'Editar', edit_product_path(@product), class: 'btn-alert' %></p>
