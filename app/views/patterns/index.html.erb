@@ -1,0 +1,39 @@
+<div class="pattern-container">
+  <div class="patterns-banner">
+    <h1>Patrones</h1>
+  </div>
+
+  <div class="patterns" style="margin-bottom:50px;">
+    <%@patterns.each do |pattern|%>
+      <div class="pattern">
+        <div class="pattern-images">
+          <%=render 'slideshow', images: pattern.images%>
+        </div>
+        <div class="pattern-text">
+          <p class="name"><%=pattern.name%></p>
+          <p class="price" style="font-style:italic;font-weight:600;">$ <%=pattern.price%></p>
+          <div class="actions">
+            <%if current_user.admin?%>
+              <%=link_to 'Ver patrón', pattern_path(pattern), class: 'btn-primary'%>
+              <%=link_to edit_pattern_path(pattern), class: 'btn-alert' do%>
+                <i class="fa-solid fa-pencil"></i>
+              <%end%>
+
+              <%=link_to pattern_path(pattern), method: :delete, data: { confirm: 'Seguro?' }, class: 'btn-danger' do%>
+                <i class="fa-solid fa-trash"></i>
+              <%end%>
+            <%else%>
+              <%=link_to 'Ver patrón', pattern_path(pattern), class: 'btn-primary'%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+
+<%= will_paginate @patterns, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
+
+</div>
+<%=render 'layouts/footer'%>
+
+

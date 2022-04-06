@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Serif+Pro:ital,wght@0,200;0,400;1,200&display=swap");
 @import './partials/*';
 @import './pages/*';
+@import './globals/*';
+@import "swiper/swiper-bundle";
 
 /* Global */
 body {
@@ -50,16 +52,27 @@ body {
   color: #333;
   font-weight: 700;
   background-color: sandybrown;
+  margin: 0px 5px;
+
+  i {
+    font-size: 1.2rem;
+  }
 }
 .btn-primary {
   color: #333;
   font-weight: 700;
   background-color: skyblue;
+  margin: 0px 5px;
 }
 .btn-danger {
   color: #333;
   font-weight: 700;
   background-color: tomato;
+  margin: 0px 5px;
+
+  i {
+    font-size: 1.2rem;
+  }
 }
 
 .btn-back {
@@ -454,7 +467,7 @@ body {
 
       .text {
         height: 50%;
-        width: 40%;
+        width: 60%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -462,7 +475,7 @@ body {
 
         h1 {
           font-style: italic;
-          margin: 0;
+          margin: 0 0 10px 0;
           font-size: 3rem;
         }
         small {
@@ -1155,50 +1168,7 @@ body {
         }
       }
     }
-  
-    .pagination {
-      margin: 10px auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      span {
-        color: #333;
-        border: 1px solid #ececec;
-        background-color: #e8b2ed;
-        padding: 5px 10px;
-        transition: all .2s;
-        &:hover {
-          background-color: #b487b8;
-        }
-      }
-  
-      em {
-        font-weight: 600;
-        color: #333;
-        border: 1px solid #ececec;
-        padding: 5px 10px;
-        background-color: #e8b2ed;
-        transition: all .2s;
-        &:hover {
-          background-color: #b487b8;
-        }
-      }
-  
-      a {
-        text-decoration: none;
-        color: #333;
-        border: 1px solid #ececec;
-        padding: 5px 10px;
-        background-color: #e8b2ed;
-        transition: all .2s;
-        &:hover {
-          background-color: #b487b8;
-        }
-      }
-    }
   }
-  
 }
 
 @media (max-width: 768px) {

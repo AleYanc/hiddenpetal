@@ -1,6 +1,7 @@
 class NoticesController < ApplicationController
   before_action :set_notice, only: %i[ show edit update destroy ]
   before_action :require_user
+  before_action :require_admin_user
 
   # GET /notices or /notices.json
   def index
@@ -24,27 +25,24 @@ class NoticesController < ApplicationController
   def create
     @notice = Notice.new(notice_params)
 
-    respond_to do |format|
-      if @notice.save
-        format.html { redirect_to @notice, notice: "Notice was successfully created." }
-        format.json { render :show, status: :created, location: @notice }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
-      end
+    if @notice.save
+      flash[:success] = 'Noticia creada con éxito'
+      redirect_to @notice
+    else
+      flash[:danger] = "Hubo un error al crear la noticia. Errores: #{@notice.errors.full_messages}"
+      render 'new'
     end
   end
 
   # PATCH/PUT /notices/1 or /notices/1.json
   def update
-    respond_to do |format|
-      if @notice.update(notice_params)
-        format.html { redirect_to @notice, notice: "Notice was successfully updated." }
-        format.json { render :show, status: :ok, location: @notice }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @notice.errors, status: :unprocessable_entity }
-      end
+
+    if @notice.update(notice_params)
+      flash[:success] = 'Noticia creada con éxito'
+      redirect_to @notice
+    else
+      flash[:danger] = "Hubo un error al crear la noticia. Errores: #{@notice.errors.full_messages}"
+      render 'new'
     end
   end
 

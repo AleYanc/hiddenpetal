@@ -1,0 +1,21 @@
+<div class="show-pattern-wrapper" style="margin-bottom:50px;">
+  <div class="left">
+    <div class="show-images">
+      <%=render 'slideshow', images: @pattern.images%>
+      <span class="image-text-helper">
+      ¡Fotos del patrón y lo que hicieron ustedes!
+      </span>
+    </div>
+    
+  </div>
+
+  <div class="right">
+    <p class="name"><%=@pattern.name%></p>
+    <p class="price">$ <%=@pattern.price%></p>
+    <p class="description"><%=@pattern.description%></p>
+    <button class="btn-primary">Comprar</button>
+  </div>
+</div>
+
+<%=render 'layouts/footer'%>
+

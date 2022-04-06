@@ -1,6 +1,7 @@
 class FrasesController < ApplicationController
   before_action :set_frase, only: %i[ show edit update destroy ]
   before_action :require_user
+  before_action :require_admin_user
 
   # GET /frases or /frases.json
   def index

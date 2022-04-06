@@ -4,14 +4,14 @@
     <h1>Bienvenido a la tienda</h1>
     <small>Descubrí todos los productos de Hidden Petal</small>
   </div>
+  <%=render 'filters_bar'%>
   <div class="products-wrapper">
-    <%=render 'filters_bar'%>
     <div class="productos-container">
       <%=render 'product', obj: @products%>
     </div>
   </div>
  
-  <%= will_paginate @products %>
+  <%= will_paginate @products, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
 </div>
 
 <%=render 'layouts/footer'%>

@@ -1,0 +1,20 @@
+<!-- Slider main container -->
+<div data-controller="carousel" class="swiper-container" data-carousel-options-value='
+  {
+    "pagination": {"el": ".swiper-pagination", "dynamicBullets": "true"},
+    "navigation": {"nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev"}
+  }'>
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <%images.each do |img|%>
+      <div class="swiper-slide">
+        <img src="<%=img%>" alt="image" style="<%=@image_styles%>">
+      </div>
+    <%end%>
+  </div>
+
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
