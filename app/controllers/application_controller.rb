@@ -15,4 +15,11 @@ class ApplicationController < ActionController::Base
       redirect_to forbidden_path
     end
   end
+
+  def require_admin_user
+    if !current_user.admin?
+      flash[:notice] = "You do not have enough authority to perform this action"
+      redirect_to forbidden_path
+    end
+  end
 end

@@ -26,7 +26,6 @@
       font-size: 1.4rem;
       margin-right: 15px;
       padding: 5px;
-      border-radius: 15px;
       transition: all .1s;
 
       &:hover {
@@ -69,4 +68,9 @@
     }
   }
 
+}
+
+.active {
+  background-color: #fff !important;
+  color: #826d5a !important;
 }

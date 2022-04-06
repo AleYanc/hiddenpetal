@@ -1,11 +1,12 @@
 <div class="navbar-header">
   <div class="navbar-menu-left">
     <%=image_tag 'logo.png', class: 'logo-image'%>
-    <%=link_to 'Inicio' , root_path%>
-      <%=link_to 'Ustedes' , trabajando_path%>
-        <%=link_to 'Contacto' , trabajando_path%>
-          <%=link_to 'Sobre mi' , trabajando_path%>
-            <%=link_to 'Tienda' , store_path%>
+    <%=link_to 'Inicio' , root_path, class: {active: current_page?(root_path)}%>
+      <%=link_to 'Ustedes' , trabajando_path, class: {active: current_page?(trabajando_path)}%>
+        <%=link_to 'Contacto' , trabajando_path, class: {active: current_page?(trabajando_path)}%>
+          <%=link_to 'Sobre mi' , trabajando_path, class: {active: current_page?(trabajando_path)}%>
+            <%=link_to 'Tienda' , store_path, class: {active: current_page?(store_path)}%>
+              <%=link_to 'Patrones' , patterns_path, class: {active: current_page?(patterns_path)}%>
   </div>
   <div class="navbar-menu-right">
     <%if current_user%>

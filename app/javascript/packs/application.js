@@ -10,8 +10,11 @@ import "channels"
 import '../js/burgermenu'
 import '../js/carousel-anim'
 import '../js/flash-msg'
+import '../js/filters'
 require('jquery')
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+import "controllers"

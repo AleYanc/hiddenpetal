@@ -11,6 +11,7 @@
           <th>Productos</th>
           <th>Frases</th>
           <th>Noticias</th>
+          <th>Patrones</th>
         </tr>
 
         <tr>
@@ -26,6 +27,10 @@
           <td>
             <%=link_to 'Crear nueva noticia', new_notice_path, class:'admin-btn'%>
           </td>
+
+          <td>
+            <%=link_to 'Crear un nuevo patrón', new_pattern_path, class:'admin-btn'%>
+          </td>
         </tr>
 
         <tr>
@@ -37,6 +42,9 @@
           </td>
           <td></td>
           <td></td>
+          <td>
+            <%=link_to 'Administrar patrones', patterns_path, class:'admin-btn'%>
+          </td>
         </tr>
 
         <tr>
@@ -58,6 +66,6 @@
       <%=link_to 'Cerrar sesión', logout_path, method: :delete, class:'btn-primary'%>
       <%= link_to 'Editar usuario', edit_user_path(@user), class: 'btn-primary' %>
     </div>
-    <%= link_to 'Volver', root_path, class: 'btn-danger' %>
+    <%= link_to 'Volver', url_for(:back), class: 'btn-danger' %>
   </div>
 <%end%>

@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @noticia = Notice.last
   end
   def store
-    @products = Product.filter(params.slice(:category)).paginate(page: params[:page], per_page: 4).order(price: order_by)
+    @products = Product.filter(params.slice(:category)).paginate(page: params[:page], per_page: 21).order(price: order_by)
   end
   def about
   end

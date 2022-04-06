@@ -1,0 +1,29 @@
+<div class="pattern-form-container">
+  <%= form_with(model: pattern) do |form| %>
+
+  <div class="field">
+    <%= form.label 'Nombre' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Descripción' %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="images-field">
+    <%= form.label 'Imagenes' %>
+    <%= form.text_area :images, value: @pattern.formatted_images %>
+    <span class="form-helper">Siempre pegar primero la imagen principal y separar por comas si es más de una imagen</span>
+  </div>
+
+  <div class="field">
+    <%= form.label 'Precio' %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit(@pattern.new_record? ? 'Crear patrón' : 'Actualizar patrón', class: 'btn-primary') %>
+  </div>
+  <% end %>
+</div>
