@@ -1,0 +1,13 @@
+<div class="home-banners-form-container">
+  <%= form_with(model: home_banner) do |form| %>
+    <div class="images-field">
+      <%= form.label 'Imagenes' %>
+      <%= form.text_area :images, value: @home_banner.formatted_images %>
+      <span class="form-helper">Siempre pegar primero la imagen principal y separar por comas si es más de una imagen</span>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class:'btn-primary' %>
+    </div>
+  <% end %>
+</div>

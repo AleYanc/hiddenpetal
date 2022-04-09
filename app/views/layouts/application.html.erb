@@ -13,6 +13,7 @@
   </head>
 
   <body>
+    <%=render 'marquees/marquee', last_marquee: @last_marquee%>
     <%=render 'layouts/navbar'%>
     <%=render 'layouts/messages'%>
     <%= yield %>

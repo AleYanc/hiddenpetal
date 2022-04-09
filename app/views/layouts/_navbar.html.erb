@@ -4,7 +4,7 @@
     <%=link_to 'Inicio' , root_path, class: {active: current_page?(root_path)}%>
       <%=link_to 'Ustedes' , trabajando_path, class: {active: current_page?(trabajando_path)}%>
         <%=link_to 'Contacto' , trabajando_path, class: {active: current_page?(trabajando_path)}%>
-          <%=link_to 'Sobre mi' , trabajando_path, class: {active: current_page?(trabajando_path)}%>
+          <%=link_to 'Sobre mi' , about_me_path, class: {active: current_page?(about_me_path)}%>
             <%=link_to 'Tienda' , store_path, class: {active: current_page?(store_path)}%>
               <%=link_to 'Patrones' , patterns_path, class: {active: current_page?(patterns_path)}%>
   </div>

@@ -12,12 +12,12 @@ class PatternsController < ApplicationController
 
   # GET /patterns/1 or /patterns/1.json
   def show
+    @image_styles = 'width: 500px;height:500px;object-fit:cover;'
   end
 
   # GET /patterns/new
   def new
     @pattern = Pattern.new
-    @image_styles = 'width: 500px;height:500px;'
   end
 
   # GET /patterns/1/edit

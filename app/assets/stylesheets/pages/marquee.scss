@@ -1,0 +1,49 @@
+/* Actual marquee - Index */
+.last-marquee {
+  width: 70vw;
+  height: 50vh;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .marquee {
+    padding: 20px 10px;
+    background-color: aliceblue;
+  }
+}
+
+/* Marquee form */
+.marquee-form-container {
+  width: 20vw;
+  height: 25vh;
+  margin: 0 auto;
+
+  form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      textarea {
+        border: none;
+        padding: 5px;
+        margin-top: 10px;
+        width: 250px;
+        min-width: 250px;
+        max-width: 250px;
+        min-height: 100px;
+        max-height: 140px;
+      }
+    }
+  }
+}

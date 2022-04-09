@@ -11,6 +11,7 @@ body {
   font-family: "Source Serif Pro", serif;
   position: relative;
   user-select: none;
+  background-color: #ececec;
 }
 
 /* Flash messages */
@@ -242,257 +243,6 @@ body {
     }
   }
 }
-/* Home page */
-.section-one {
-  height: 550px;
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
-  .slider {
-    display: none;
-  }
-
-  .section-one-heading {
-    width: 90%;
-    margin: 0 auto;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    h1 {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 3.1rem;
-      letter-spacing: 2px;
-      margin: 0;
-      background-color: #e8b2ed;
-      padding: 15px;
-      font-weight: 400;
-    }
-  }
-
-  .store-preview {
-    width: 80%;
-    height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  .product-card {
-    width: 300px;
-    height: 375px;
-
-    .product-image {
-      width: 300px;
-      height: 300px;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .product-name {
-      font-style: italic;
-      font-weight: 600;
-    }
-    .product-price {
-      font-style: italic;
-    }
-
-    .product-link {
-      display: block;
-      width: 100%;
-      padding: 10px 0;
-      text-align: center;
-      color: #333;
-      background-color: #e8b2ed;
-      text-decoration: none;
-    }
-  }
-}
-.section-two {
-  height: 650px;
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-
-  .section-two-heading {
-    display: block;
-    background-color: #e8b2ed;
-    text-transform: uppercase;
-    height: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
-    font-size: 4rem;
-    font-weight: 400;
-  }
-
-  .section-two-content {
-    width: 80%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    .one,
-    .two,
-    .three {
-      height: 95%;
-      width: 33%;
-    }
-
-    .one {
-      font-size: 1.25rem;
-      font-style: italic;
-      position: relative;
-      font-weight: 600;
-
-      p {
-        padding: 10px 50px;
-      }
-      &:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 800px;
-        top: 0;
-        left: -100%;
-        background-color: #d5e8c5;
-        z-index: -1;
-      }
-    }
-
-    .two {
-      background-color: #ececec;
-      position: relative;
-
-      .frases-header {
-        p {
-          background-color: #afd192;
-          padding: 2px;
-          display: block;
-          width: 33%;
-          margin: 15px 15px;
-        }
-      }
-      .frase {
-        p {
-          padding: 5px;
-          font-size: 2.6rem;
-          margin: 10px;
-        }
-      }
-    }
-
-    .three {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-evenly;
-
-      .foto {
-        width: 96%;
-        height: 330px;
-        background-image: asset-url("foto1.jpeg");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-evenly;
-
-        p {
-          display: inline-block;
-          font-size: 1.15rem;
-          background-color: #e8b2ed;
-          padding: 5px;
-          margin: 5px;
-        }
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 800px;
-        top: 0;
-        right: -100%;
-        background-color: #d5e8c5;
-        z-index: -1;
-      }
-    }
-  }
-}
-.section-three {
-  width: 100%;
-  height: 50vh;
-  padding: 50px 0;
-
-  .section-three-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-
-    .image {
-      width: 40%;
-      background-image: asset-url("foto2.jpg");
-      background-position: center center;
-      background-size: cover;
-    }
-
-    .text-container {
-      width: 60%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      background-color: #afd192;
-
-      .text {
-        height: 50%;
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        h1 {
-          font-style: italic;
-          margin: 0 0 10px 0;
-          font-size: 3rem;
-        }
-        small {
-          margin-bottom: 10px;
-          background-color: #eee;
-          padding: 2px;
-        }
-        p {
-          font-size: 1.2rem;
-          letter-spacing: 1px;
-          font-style: italic;
-          font-weight: 600;
-        }
-      }
-    }
-  }
-}
 
 /* Frases */
 .frase-container {
@@ -618,11 +368,12 @@ body {
 .footer {
   width: 100vw;
   height: 12vh;
-  background-color: #ececec;
+  background-color: #E9E0D2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 25px;
 
   .footer-content {
     display: flex;
