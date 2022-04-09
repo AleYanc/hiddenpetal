@@ -1,6 +1,60 @@
 <div class="home-container">
-  <%=render 'pages/section-one'%>
-  <%=render 'pages/section-two'%>
-  <%=render 'pages/section-three'%>
+  <div class="home-banner">
+    <div data-controller="carousel" class="swiper-container" style="width:100vw; height:30vh" data-carousel-options-value='
+      {
+        "pagination": {"el": ".swiper-pagination", "dynamicBullets": "true"},
+        "navigation": {"nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev"},
+        "autoplay": {"delay": "5000", "disableOnInteraction": "false"}
+      }'>
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <%@home_banners.images.each do |img|%>
+            <div class="swiper-slide">
+              <img src="<%=img%>" alt="image" style="width:100vw;height:30vh;object-fit:cover;">
+            </div>
+          <%end%>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+  </div>
+
+  <div class="home-products">
+    <div class="product">
+    
+    </div>
+
+    <div class="product">
+    
+    </div>
+
+    <div class="product">
+    
+    </div>
+
+    <div class="product">
+    
+    </div>
+  </div>
+
+  <div class="categories-bg">
+    <div class="home-categories">
+      <%@home_categories.each do |category|%>
+        <div class="category">
+          <%=link_to store_path(:category => category.name), style: "text-decoration:none;color:black;", class:'category-link' do%>
+            <div class="category-bg" style="background-image:url(<%=category.image%>)"></div>
+            <h1><%=category.name%></h1>
+          <%end%>
+        </div>
+      <%end%>
+
+      <div class="category">
+        <%=link_to store_path, style: "text-decoration:none;color:black;" do%>
+          <h1>Ver todo</h1>
+        <%end%>
+      </div>
+    </div>
+  </div>
   <%=render 'layouts/footer'%>
 </div>

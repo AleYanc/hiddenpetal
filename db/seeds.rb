@@ -7,11 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Categories
-Category.create(name: 'Scrunchies')
-Category.create(name: 'Hogar & Deco')
-Category.create(name: 'Primavera & Verano')
-Category.create(name: 'Otoño & Invierno')
-Category.create(name: 'Toallas & Discos')
-Category.create(name: 'Bolsos & Neceseres')
-Category.create(name: 'Muñecos')
-Category.create(name: 'Patrones')
+Category.create(name: 'Scrunchies', image: 'https://www.tresovejastejidos.com/wp-content/uploads/2020/08/c%C3%ADrculos-crochet-vuelta-4.jpg')
+Category.create(name: 'Hogar & Deco', image: 'https://www.tresovejastejidos.com/wp-content/uploads/2020/08/c%C3%ADrculos-crochet-vuelta-4.jpg')
+Category.create(name: 'Primavera & Verano', image: 'https://www.tresovejastejidos.com/wp-content/uploads/2020/08/c%C3%ADrculos-crochet-vuelta-4.jpg')
+Category.create(name: 'Otoño & Invierno', image: 'https://www.tresovejastejidos.com/wp-content/uploads/2020/08/c%C3%ADrculos-crochet-vuelta-4.jpg')
+Category.create(name: 'Toallas & Discos', image: 'https://www.tresovejastejidos.com/wp-content/uploads/2020/08/c%C3%ADrculos-crochet-vuelta-4.jpg')
+Category.create(name: 'Bolsos & Neceseres', image: 'https://www.tresovejastejidos.com/wp-content/uploads/2020/08/c%C3%ADrculos-crochet-vuelta-4.jpg')
+Category.create(name: 'Muñecos', image: 'https://www.tresovejastejidos.com/wp-content/uploads/2020/08/c%C3%ADrculos-crochet-vuelta-4.jpg')

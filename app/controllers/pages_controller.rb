@@ -2,13 +2,17 @@ class PagesController < ApplicationController
 
   def home
     @store_preview = Product.last(3)
-    @frase = Frase.last
-    @noticia = Notice.last
+    @home_categories = Category.all
+    @home_banners = HomeBanner.last
   end
   def store
     @products = Product.filter(params.slice(:category)).paginate(page: params[:page], per_page: 21).order(price: order_by)
   end
   def about
+    @frase = Frase.last
+    @noticia = Notice.last
+  end
+  def contact
   end
   def working
   end

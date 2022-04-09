@@ -1,0 +1,12 @@
+<div class="marquee-form-container">
+  <%= form_with(model: marquee) do |form| %>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_area :title %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: 'btn-primary' %>
+    </div>
+  <% end %>
+</div>

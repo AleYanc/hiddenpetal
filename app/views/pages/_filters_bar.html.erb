@@ -1,9 +1,8 @@
 <div class="filters">
-  <p class="filter-title"><span class="iconify" data-icon="cil:list-filter"></span> Filtros y orden</p>
+  <p class="filter-title" style="margin-right:85px"><span class="iconify" data-icon="cil:list-filter"></span>Categorías</p>
   <div class="filter-form-container">
     <%= form_tag(store_path, method: :get, class:'filter-form') do %>
       <div class="field">
-        <%= label_tag 'Categoria' %>
         <%= select_tag(:category, raw('
         <option>Scrunchies</option>
         <option>Muñecos</option>
@@ -15,15 +14,22 @@
         <option>Patrones</option>
         '), :prompt => 'Seleccionar', style:'text-align:center;') %>
       </div>
+      <%= submit_tag 'Aplicar', class:'btn-primary', style:'margin:10px 0' %>
+      <%=link_to 'Borrar', store_path, class:'btn-danger', style:'margin:10px 0'%>
+    <% end %>
+  </div>
+
+  <p class="filter-title order" style="margin-right:50px;"> <i class="fa-solid fa-list"></i> Orden</p>
+  <div class="order-form-container">
+    <%=form_tag(store_path, method: :get, class: 'order-form') do%>
       <div class="field">
         <%= label_tag 'Precio' %>
         <%= select_tag(:order, raw('
           <option>Mayor a menor</option>
           <option>Menor a mayor</option>
-        '), :prompt => 'Ordenar por precio', style:'text-align:center;')%>
+        '), :prompt => 'Seleccionar', style:'text-align:center;')%>
       </div>
-      <%= submit_tag 'Aplicar filtros', class:'btn-primary' %>
-      <%=link_to 'Borrar filtros', store_path, class:'btn-danger'%>
-    <% end %>
+      <%= submit_tag 'Aplicar orden', class:'btn-primary', style:'margin:10px 0' %>
+    <%end%>
   </div>
 </div>
