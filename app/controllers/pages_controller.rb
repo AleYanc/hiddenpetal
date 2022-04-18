@@ -5,17 +5,27 @@ class PagesController < ApplicationController
     @home_categories = Category.all
     @home_banners = HomeBanner.last
   end
+
   def store
     @products = Product.filter(params.slice(:category)).paginate(page: params[:page], per_page: 21).order(price: order_by)
+    @categories = Category.all
   end
+
   def about
     @frase = Frase.last
     @noticia = Notice.last
   end
+
   def contact
   end
+
   def working
   end
+
+  def gallery
+    @reviews = Review.all
+  end
+
   def forbidden
   end
 

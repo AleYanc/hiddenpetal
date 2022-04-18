@@ -1,14 +1,8 @@
 document.addEventListener('turbolinks:load', () => { 
-  filterBtn = document.querySelector('.filter-title')
-  filterBar = document.querySelector('.filter-form-container')
-  orderBtn = document.querySelector('.filter-title.order')
-  orderBar = document.querySelector('.order-form-container')
+  categoriesFiltersTitle = document.querySelector('.categories-filter-title');
+  filtersOptions = document.querySelector('.filter-select-box-options');
 
-  filterBtn.addEventListener('click', () => {
-    filterBar.classList.toggle('filter-open')
-  })
-
-  orderBtn.addEventListener('click', () => {
-    orderBar.classList.toggle('filter-open')
+  categoriesFiltersTitle.addEventListener('click', () => {
+    filtersOptions.classList.toggle('filter-open')
   })
 })

@@ -1,35 +1,16 @@
 <div class="filters">
-  <p class="filter-title" style="margin-right:85px"><span class="iconify" data-icon="cil:list-filter"></span>Categorías</p>
-  <div class="filter-form-container">
-    <%= form_tag(store_path, method: :get, class:'filter-form') do %>
-      <div class="field">
-        <%= select_tag(:category, raw('
-        <option>Scrunchies</option>
-        <option>Muñecos</option>
-        <option>Toallas & Discos</option>
-        <option>Bolsos & Neceseres</option>
-        <option>Hogar & Deco</option>
-        <option>Otoño & Invierno</option>
-        <option>Primavera & Verano</option>
-        <option>Patrones</option>
-        '), :prompt => 'Seleccionar', style:'text-align:center;') %>
-      </div>
-      <%= submit_tag 'Aplicar', class:'btn-primary', style:'margin:10px 0' %>
-      <%=link_to 'Borrar', store_path, class:'btn-danger', style:'margin:10px 0'%>
-    <% end %>
-  </div>
+  <%if params[:category].present?%>
+    <p style="font-size:.9rem;font-style:italic;font-weight:700;">Visualizando categoría: <%=params[:category]%></p>
+  <%end%>
+  <div class="filter-select-box">
+    <div class="filter-select-box-title">
+      <p class="categories-filter-title btn-primary">Categorías</p>
+    </div>
 
-  <p class="filter-title order" style="margin-right:50px;"> <i class="fa-solid fa-list"></i> Orden</p>
-  <div class="order-form-container">
-    <%=form_tag(store_path, method: :get, class: 'order-form') do%>
-      <div class="field">
-        <%= label_tag 'Precio' %>
-        <%= select_tag(:order, raw('
-          <option>Mayor a menor</option>
-          <option>Menor a mayor</option>
-        '), :prompt => 'Seleccionar', style:'text-align:center;')%>
-      </div>
-      <%= submit_tag 'Aplicar orden', class:'btn-primary', style:'margin:10px 0' %>
-    <%end%>
+    <div class="filter-select-box-options">
+      <%categories.each do |category|%>
+        <%=link_to "#{category.name}", store_path(category: category.name), class: 'link'%>
+      <%end%>
+    </div>
   </div>
 </div>

@@ -4,7 +4,7 @@
     <h1>Bienvenido a la tienda</h1>
     <small>Descubrí todos los productos de Hidden Petal</small>
   </div>
-  <%=render 'filters_bar'%>
+  <%=render 'filters_bar', categories: @categories%>
   <div class="products-wrapper">
     <div class="productos-container">
       <%=render 'product', obj: @products%>
