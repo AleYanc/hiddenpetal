@@ -30,7 +30,7 @@
           }'>
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <%if @home_banner_phone != []%>
+              <%if !@home_banner_phone.nil?%>
                 <%@home_banner_phone.images.each do |img|%>
                   <div class="swiper-slide">
                     <img src="<%=img%>" alt="image" style="width:100vw;height:30vh;object-fit:cover;">
