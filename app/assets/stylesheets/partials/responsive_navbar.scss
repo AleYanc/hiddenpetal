@@ -1,65 +1,71 @@
 .responsive-navbar {
-  width: 100vw;
-  height: 12.5vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 150;
-  background-color: #826d5a;
+  display: none;
+}
 
-  .burger-menu {
-    position: absolute;
-    left: 5%;
-    top: 45%;
-    height: 50px;
-    width: 50px;
-    z-index: 154;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all .2s;
-    overflow: hidden;
-
-    span {
-      height: 3px;
-      width: 70%;
-      background-color: #333;
-      margin: 3px 0;
-      transition: all .2s;
-    }
-  }
-
-  .logo-image {
-    width: 115px;
-    height: 115px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .navbar-menu {
-    overflow: hidden;
-    width: 0;
-    height: 100vh;
+@media (max-width: 768px) {
+  .responsive-navbar {
+    width: 100vw;
+    height: 12.5vh;
     position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #e8b2ed;
-    transition: all .2s;
-    z-index: 153;
-
-    a {
-      color: #ececec;
-      text-decoration: none;
-      font-size: 2rem;
-      margin: 18px 0;
-      padding: 5px;
+    z-index: 150;
+    background-color: #826d5a;
+  
+    .burger-menu {
+      position: absolute;
+      left: 5%;
+      top: 45%;
+      height: 50px;
+      width: 50px;
+      z-index: 154;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+      overflow: hidden;
+  
+      span {
+        height: 3px;
+        width: 70%;
+        background-color: #333;
+        margin: 3px 0;
+        transition: all .2s;
+      }
+    }
+  
+    .logo-image {
+      width: 115px;
+      height: 115px;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .navbar-menu {
+      overflow: hidden;
+      width: 0;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #e8b2ed;
+      transition: all .2s;
+      z-index: 153;
+  
+      a {
+        color: #ececec;
+        text-decoration: none;
+        font-size: 2rem;
+        margin: 18px 0;
+        padding: 5px;
+      }
     }
   }
 }
