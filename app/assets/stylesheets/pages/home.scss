@@ -1,81 +1,8 @@
 /* Home page */
-.section-one {
-  height: 550px;
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
-  .slider {
-    display: none;
-  }
-
-  .section-one-heading {
-    width: 90%;
-    margin: 0 auto;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    h1 {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 3.1rem;
-      letter-spacing: 2px;
-      margin: 0;
-      background-color: #e8b2ed;
-      padding: 15px;
-      font-weight: 400;
-    }
-  }
-
-  .store-preview {
-    width: 80%;
-    height: 450px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-  .product-card {
-    width: 300px;
-    height: 375px;
-
-    .product-image {
-      width: 300px;
-      height: 300px;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-    .product-name {
-      font-style: italic;
-      font-weight: 600;
-    }
-    .product-price {
-      font-style: italic;
-    }
-
-    .product-link {
-      display: block;
-      width: 100%;
-      padding: 10px 0;
-      text-align: center;
-      color: #333;
-      background-color: #e8b2ed;
-      text-decoration: none;
-    }
-  }
-}
-.section-two {
-  height: 650px;
-  width: 80%;
+section.section-two {
+  height: auto;
+  min-height: 650px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -84,40 +11,48 @@
 
   .section-two-heading {
     display: block;
-    background-color: #e8b2ed;
     text-transform: uppercase;
     height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 5px 10px;
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 400;
   }
 
-  .section-two-content {
-    width: 80%;
-    height: 90%;
+  div.section-two-content {
+    width: 100vw;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin-top: 20px;
 
-    .one,
-    .two,
-    .three {
-      height: 95%;
-      width: 33%;
+    div.one,
+    div.two, div.three {
+      height: 450px;
+      width: 37.5%;
     }
 
-    .one {
-      font-size: 1.25rem;
-      font-style: italic;
+    div.one {
       position: relative;
-      font-weight: 600;
+      background-color: #d5e8c5;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
 
-      p {
-        padding: 10px 50px;
+      .text {
+        width: 65%;
+
+        p {
+          font-weight: 400;
+          text-align: justify;
+          padding: 10px 50px;
+          font-size: 1.35rem;
+        }
       }
+
       &:before {
         content: "";
         position: absolute;
@@ -130,19 +65,27 @@
       }
     }
 
-    .two {
+    div.two {
       background-color: #ececec;
       position: relative;
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
 
       .frases-header {
         p {
-          background-color: #afd192;
-          padding: 2px;
-          display: block;
-          width: 33%;
-          margin: 15px 15px;
+          width: 100%;
+          font-size: 1.35rem;
+          background-color: #826d5a;
+          color: #ececec;
+          margin: 0 0 10px 10px;
+          padding: 4px;
+          text-align: center;
         }
       }
+
       .frase {
         p {
           padding: 5px;
@@ -152,50 +95,24 @@
       }
     }
 
-    .three {
-      position: relative;
+    div.three {
+      background-color: #d5e8c5;
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-evenly;
-
+      align-items: center;
+      justify-content: flex-start;
+      
       .foto {
-        width: 96%;
-        height: 330px;
+        margin: 0 10px;
+        width: 50%;
+        height: 95%;
         background-image: asset-url("foto1.jpeg");
         background-position: center center;
-        background-repeat: no-repeat;
         background-size: cover;
-      }
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-evenly;
-
-        p {
-          display: inline-block;
-          font-size: 1.15rem;
-          background-color: #e8b2ed;
-          padding: 5px;
-          margin: 5px;
-        }
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 800px;
-        top: 0;
-        right: -100%;
-        background-color: #d5e8c5;
-        z-index: -1;
       }
     }
   }
 }
+
 .section-three {
   width: 100%;
   height: 50vh;
@@ -219,7 +136,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      background-color: #afd192;
+      background-color: #d5e8c5;
 
       .text {
         height: 50%;
@@ -254,21 +171,67 @@
   .home-banner {
     width: 100%;
     height: 30vh;
-    background-color: aqua;
+  }
+
+  .home-products-title {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e8b2ed;
+    padding: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 0;
   }
 
   .home-products {
-    width: 80%;
-    height: 40vh;
+    width: 85vw;
+    height: 45vh;
     margin: 50px auto;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    position: relative;
 
     .product {
       width: 350px;
-      height: 400px;
-      background-color: aqua;
+      height: 100%;
+      position: relative;
+
+      &:hover {
+        .product-details {
+          height: 100%;
+        }
+      }
+
+      .product-details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #ececec, $alpha: .8);
+        width: 100%;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all .2s;
+
+        .name {
+          font-size: 1.1rem;
+          background-color: #e8b2ed;
+          padding: 5px 10px;
+        }
+
+        .price {
+          font-size: 1.1rem;
+          background-color: #e8b2ed;
+          padding: 5px 10px;
+          font-style: italic;
+          font-weight: 600;
+        }
+      }
     }
   }
 

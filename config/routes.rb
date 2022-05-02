@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :products
 
-  get 'producto/:id', to: 'products#showpub'
+  get 'producto/:id', to: 'products#showpub', as: 'producto'
   get 'catalogo', to: 'pages#store', as: 'store'
   get 'sobre-mi', to: 'pages#about', as: 'about_me'
   get 'contacto', to: 'pages#contact', as: 'contact'

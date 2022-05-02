@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  serialize :images
   before_save :convert_images_to_a
 
   def convert_images_to_a

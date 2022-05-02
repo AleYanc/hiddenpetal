@@ -3,7 +3,13 @@
     <div class="images-field">
       <%= form.label 'Imagenes' %>
       <%= form.text_area :images, value: @home_banner.formatted_images %>
-      <span class="form-helper">Siempre pegar primero la imagen principal y separar por comas si es más de una imagen</span>
+      <span class="form-helper">Siempre pegar primero la imagen principal y separar por comas si es más de una imagen. 
+      Los banners se mostrarán en el orden que sean puestos aquí.</span>
+    </div>
+
+    <div class="images-field" style="margin: 15px 0;">
+      <%=form.label 'Tipo de banner', style:'margin-bottom:5px;'%>
+      <%=form.select :screen_type, raw('<option value="pantalla_grande">Pantalla grande</option value="celular"><option>Celular</option>'), prompt: 'Seleccionar tipo de banner'%>
     </div>
 
     <div class="actions">

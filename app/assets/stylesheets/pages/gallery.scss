@@ -12,11 +12,73 @@
     font-weight: 400;
     background-color: #fff;
     width: 50%;
+    text-align: center;
   }
 
   .gallery-images {
     width: 100%;
     height: auto;
     min-height: 60vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .review {
+      width: 250px;
+      height: 350px;
+      margin: 20px 0;
+
+      .review-image {
+        width: 100%;
+        height: 90%;
+        position: relative;
+
+        .review-content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+          background-color: rgba($color: #ececec, $alpha: .85);
+          opacity: 0;
+          transition: all .2s;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          p {
+            padding: 10px;
+            text-align: center;
+          }
+
+          span {
+            font-style: italic;
+            font-weight: 600;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        &:hover {
+          .review-content {
+            opacity: 1;
+          }
+        }
+      }
+
+      .review-product {
+        p {
+          background-color: #e8b2ec;
+          display: inline-block;
+        }
+      }
+    }
   }
 }

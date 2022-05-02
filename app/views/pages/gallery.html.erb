@@ -2,6 +2,20 @@
   <h2 class="gallery-title">¡Estas reseñas fueron enviadas por ustedes! Gracias por tomarse el tiempo <3</h2>
 
   <div class="gallery-images">
-  
+    <%@reviews.each do |review|%>
+      <div class="review">
+        <div class="review-image">
+          <img src="<%=review.image%>" alt="">
+
+          <div class="review-content">
+            <p><%=review.content%></p>
+            <span>- <%=review.user_name%></span>
+          </div>
+        </div>
+        <div class="review-product">
+          <p><%=review.product_name%></p>
+        </div>
+      </div>
+    <%end%>
   </div>
 </div>

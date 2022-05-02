@@ -1,10 +1,14 @@
 <div class="filters">
   <%if params[:category].present?%>
-    <p style="font-size:.9rem;font-style:italic;font-weight:700;">Visualizando categoría: <%=params[:category]%></p>
+    <p style="font-size:.9rem;font-style:italic;font-weight:700;" class="actual-category">Visualizando categoría: <%=params[:category]%></p>
   <%end%>
   <div class="filter-select-box">
     <div class="filter-select-box-title">
       <p class="categories-filter-title btn-primary">Categorías</p>
+    </div>
+
+     <div class="filter-select-box-title-responsive">
+      <p class="categories-filter-title-responsive btn-primary">Categorías</p>
     </div>
 
     <div class="filter-select-box-options">
@@ -12,5 +16,17 @@
         <%=link_to "#{category.name}", store_path(category: category.name), class: 'link'%>
       <%end%>
     </div>
+  </div>
+</div>
+
+<div class="filter-select-box-options-offcanvas">
+  <div class="menu-close">
+    <i class="fa-solid fa-circle-xmark"></i>
+  </div>
+
+  <div class="categories-links">
+    <%categories.each do |category|%>
+      <%=link_to "♥ #{category.name}", store_path(category: category.name), class: 'link'%>
+    <%end%>
   </div>
 </div>

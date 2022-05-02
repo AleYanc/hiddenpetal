@@ -8,4 +8,13 @@
   text-align: center;
   background-color: #E9E0D2;
   font-weight: bold;
+  z-index: 152;
+}
+
+@media (max-width: 425px) {
+  .marquee-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 }

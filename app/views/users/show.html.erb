@@ -4,59 +4,46 @@
 
     <div class="actions">
       <p>Acciones disponibles</p>
-      <table>
 
-        <tr>
-          <th>Usuarios</th>
-          <th>Productos</th>
-          <th>Frases</th>
-          <th>Noticias</th>
-          <th>Patrones</th>
-        </tr>
+      <div class="list">
+        <ul>
+          <li>Usuarios: 
+            <%=link_to 'Administrar', users_path, class:'btn-primary btn-sm'%>
+            <%=link_to 'Editar', edit_user_path(@user), class: 'btn-alert btn-sm' %>
+            <%=link_to 'Cerrar sesión', logout_path, method: :delete, class:'btn-danger btn-sm'%>
+          </li>
+          <li>Productos: 
+            <%=link_to 'Administrar productos', products_path, class:'btn-alert btn-sm'%>
+            <%=link_to 'Crear nuevo producto', new_product_path, class:'btn-primary btn-sm'%>
 
-        <tr>
-          <td>
-            <%=link_to 'Administrar usuarios', users_path, class:'admin-btn'%>
-          </td>
-          <td>
-            <%=link_to 'Crear nuevo producto', new_product_path, class:'admin-btn'%>
-          </td>
-          <td>
-            <%=link_to 'Crear nueva frase', new_frase_path, class:'admin-btn'%>
-          </td>
-          <td>
-            <%=link_to 'Crear nueva noticia', new_notice_path, class:'admin-btn'%>
-          </td>
+          </li>
+          <li>Frases: 
+            <%=link_to 'Crear nueva frase', new_frase_path, class:'btn-primary btn-sm'%>
+          </li>
+          <li>Noticias: 
+            <%=link_to 'Crear nueva noticia', new_notice_path, class:'btn-primary btn-sm'%>
+          </li>
+          <li>Patrones: 
+            <%=link_to 'Administrar patrones', patterns_path, class:'btn-alert btn-sm'%>
+            <%=link_to 'Crear un nuevo patrón', new_pattern_path, class:'btn-primary btn-sm'%>
+          </li>
+          <li>Marquees:
+            <%=link_to 'Marquee actual', marquees_path, class:'btn-primary btn-sm'%> 
+            <%=link_to 'Crear nuevo marquee', new_marquee_path, class:'btn-primary btn-sm'%>
+          </li>
+          <li>Reseñas: 
+            <%=link_to 'Crear nueva reseña', new_review_path, class:'btn-primary btn-sm'%>
+          </li>
 
-          <td>
-            <%=link_to 'Crear un nuevo patrón', new_pattern_path, class:'admin-btn'%>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <%= link_to 'Editar usuario', edit_user_path(@user), class: 'admin-btn' %>
-          </td>
-          <td>
-            <%=link_to 'Administrar productos', products_path, class:'admin-btn'%>
-          </td>
-          <td></td>
-          <td></td>
-          <td>
-            <%=link_to 'Administrar patrones', patterns_path, class:'admin-btn'%>
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <%=link_to 'Cerrar sesión', logout_path, method: :delete, class:'admin-btn'%>
-          </td>
-        </tr>
-
-      </table>
+          <li>Home Banners: 
+            <%=link_to 'Nuevo set', new_home_banner_path, class:'btn-primary btn-sm'%>
+            <%=link_to 'Set actual', home_banners_path, class: 'btn-alert btn-sm'%>
+          </li>
+        </ul>
+      </div>
     </div>
-    <%= link_to 'Volver', root_path, class: 'btn-danger' %>
   </div>
+  <%= link_to 'Volver', url_for(:back), class: 'btn-danger', style:'margin-top:50px;display:inline-block' %>
 <%else%>
   <div class="common-user-wrapper">
     <h2>Bienvenido, <%=@user.name%></h2>

@@ -1,0 +1,23 @@
+<div data-controller="carousel" class="swiper-container" style="width:100vw; height:30vh;display:flex;align-items:center;justify-content:center;" data-carousel-options-value='
+      {
+        "pagination": {"el": ".swiper-pagination", "dynamicBullets": "true"},
+        "autoplay": {"delay": "5000", "disableOnInteraction": "false"},
+        "slidesPerView": "auto",
+        "autoplay": {"delay": "4500", "disableOnInteraction": "true"}
+      }'>
+  <div class="swiper-wrapper" style="width:95%;height:250px;">
+      <%products.each do |product|%>
+        <div class="swiper-slide" style="width:250px;margin:0 15px;">
+          <div class="product">
+            <img src="<%=product.img%>" alt="" style="width:250px;height:250px;object-fit:cover;">
+            <div class="product-details">
+              <p class="name"><%=product.name%></p>
+              <p class="price">$ <%=product.price%></p>
+              <%=link_to 'Ver producto', producto_path(product), class: 'btn-primary'%>
+            </div>
+          </div>
+        </div>
+      <%end%>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>

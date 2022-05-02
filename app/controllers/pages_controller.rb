@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
 
   def home
-    @store_preview = Product.last(3)
+    @store_preview = Product.last(8)
     @home_categories = Category.all
-    @home_banners = HomeBanner.last
+    @home_banner_big = HomeBanner.where(screen_type: 'pantalla_grande').last
+    @home_banner_phone = HomeBanner.where(screen_type: 'Celular').last
   end
 
   def store

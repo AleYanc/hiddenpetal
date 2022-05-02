@@ -1,40 +1,55 @@
 <div class="home-container">
   <div class="home-banner">
-    <div data-controller="carousel" class="swiper-container" style="width:100vw; height:30vh" data-carousel-options-value='
-      {
-        "pagination": {"el": ".swiper-pagination", "dynamicBullets": "true"},
-        "navigation": {"nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev"},
-        "autoplay": {"delay": "5000", "disableOnInteraction": "false"}
-      }'>
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <%@home_banners.images.each do |img|%>
-            <div class="swiper-slide">
-              <img src="<%=img%>" alt="image" style="width:100vw;height:30vh;object-fit:cover;">
+    <div class="bigscreen">
+      <div data-controller="carousel" class="swiper-container" style="width:100vw; height:30vh" data-carousel-options-value='
+        {
+          "pagination": {"el": ".swiper-pagination", "dynamicBullets": "true"},
+          "navigation": {"nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev"},
+          "autoplay": {"delay": "5000", "disableOnInteraction": "false"}
+        }'>
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <%if @home_banner_big != []%>
+              <%@home_banner_big.images.each do |img|%>
+                <div class="swiper-slide">
+                  <img src="<%=img%>" alt="image" style="width:100vw;height:30vh;object-fit:cover;">
+                </div>
+              <%end%>
+            <%end%>
+          </div>
+          <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+    <div class="celular">
+        <div data-controller="carousel" class="swiper-container celular" style="width:100vw; height:30vh" data-carousel-options-value='
+          {
+            "pagination": {"el": ".swiper-pagination", "dynamicBullets": "true"},
+            "navigation": {"nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev"},
+            "autoplay": {"delay": "5000", "disableOnInteraction": "false"}
+          }'>
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <%if @home_banner_phone != []%>
+                <%@home_banner_phone.images.each do |img|%>
+                  <div class="swiper-slide">
+                    <img src="<%=img%>" alt="image" style="width:100vw;height:30vh;object-fit:cover;">
+                  </div>
+                <%end%>
+              <%end%>
             </div>
-          <%end%>
+            <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
     </div>
   </div>
 
+  <h2 class="home-products-title">¡Nuevos productos en stock!</h2>
   <div class="home-products">
-    <div class="product">
-    
+    <div class="home-products-big-screen">
+      <%=render 'home-slideshow', products: @store_preview%>
     </div>
-
-    <div class="product">
-    
-    </div>
-
-    <div class="product">
-    
-    </div>
-
-    <div class="product">
-    
+    <div class="home-products-responsive">
+      <%=render 'home-slideshow-responsive', products: @store_preview%>
     </div>
   </div>
 
@@ -49,7 +64,7 @@
         </div>
       <%end%>
 
-      <div class="category">
+      <div class="category last-cat">
         <%=link_to store_path, style: "text-decoration:none;color:black;" do%>
           <h1>Ver todo</h1>
         <%end%>

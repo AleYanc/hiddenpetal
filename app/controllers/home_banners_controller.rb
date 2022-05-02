@@ -3,7 +3,8 @@ class HomeBannersController < ApplicationController
 
   # GET /home_banners or /home_banners.json
   def index
-    @home_banner = HomeBanner.last
+    @home_banner_big = HomeBanner.last(3).where(screen_type: 'Pantalla grande')
+    @home_banner_phone = HomeBanner.last(3).where(screen_type: 'Celular')
   end
 
   # GET /home_banners/1 or /home_banners/1.json
@@ -64,6 +65,6 @@ class HomeBannersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def home_banner_params
-      params.require(:home_banner).permit(:images)
+      params.require(:home_banner).permit(:images, :screen_type)
     end
 end
