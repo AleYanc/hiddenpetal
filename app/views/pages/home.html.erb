@@ -9,7 +9,7 @@
         }'>
           <div class="swiper-wrapper">
             <!-- Slides -->
-            <%if @home_banner_big != []%>
+            <%if @home_banner_big != [] && @home_banner_big.images != []%>
               <%@home_banner_big.images.each do |img|%>
                 <div class="swiper-slide">
                   <img src="<%=img%>" alt="image" style="width:100vw;height:30vh;object-fit:cover;">
