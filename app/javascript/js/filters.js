@@ -1,4 +1,9 @@
-document.addEventListener('turbolinks:load', () => { 
+document.addEventListener('turbolinks:load', () => {
+  
+  if(!($('.categories-filter-title').length > 0)) {
+    return;
+  }
+
   categoriesFiltersTitle = document.querySelector('.categories-filter-title');
   filtersOptions = document.querySelector('.filter-select-box-options');
 

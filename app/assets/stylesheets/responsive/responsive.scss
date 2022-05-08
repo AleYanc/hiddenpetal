@@ -560,7 +560,7 @@
     width: 0;
     height: 100vh;
     overflow: hidden;
-    z-index: 100;
+    z-index: 180;
     transition: all .2s;
 
     .menu-close {
@@ -584,7 +584,7 @@
       width: 100%;
       height: 100vh;
       background-color: #ececec;
-      z-index: 100;
+      z-index: 180;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -645,13 +645,9 @@
 
       div.one {
         p {
-          margin: 0;
-          padding: 25px 25px;
           font-size: 1.1rem;
-
-          &:nth-of-type(2) {
-            padding: 0px 25px;
-          }
+          padding: 10px 0 !important;
+          width: 100%;
         }
 
         &:before {
@@ -667,7 +663,7 @@
             background-color: #afd192;
             padding: 5px;
             display: block;
-            width: 42%;
+            width: 100%;
             margin: 15px 15px;
           }
         }
