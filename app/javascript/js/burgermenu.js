@@ -8,9 +8,19 @@ $(document).on("click", '.burger-menu',e => {
     responsiveMenu.classList.toggle("open-navbar");
     // body.classList.toggle("disable-scroll");
   }
-
-
 });
+
+document.addEventListener('click', (e) => {
+  let responsiveMenu = document.querySelector(".navbar-menu");
+  let burgerBtn = document.querySelector(".burger-menu");
+
+  if(document.getElementById("navbar-menu").contains(e.target) || document.getElementById("burger-menu").contains(e.target)) {
+    console.log('adentro');
+  } else {
+    responsiveMenu.classList.remove('open-navbar')
+    burgerBtn.classList.remove("close");
+  }
+})
 
 /* burgerBtn.addEventListener('click', () => {
     console.log('clicked')

@@ -23,13 +23,13 @@
 <div class="responsive-navbar">
   <%=image_tag 'logo.png', class: 'logo-image'%>
 
-  <div class="burger-menu">
+  <div class="burger-menu" id="burger-menu">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <div class="navbar-menu">
+  <div class="navbar-menu" id="navbar-menu">
     <%=link_to 'Inicio' , root_path, class: {active: current_page?(root_path)}%>
         <%=link_to 'Galería' , gallery_path, class: {active: current_page?(gallery_path)}%>
           <%=link_to 'Contacto' , contact_path, class: {active: current_page?(contact_path)}%>
