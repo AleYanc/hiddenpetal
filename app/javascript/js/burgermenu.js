@@ -6,19 +6,21 @@ $(document).on("click", '.burger-menu',e => {
   if (e.target.className === "burger-menu" || "burger-menu close") {
     burgerBtn.classList.toggle("close");
     responsiveMenu.classList.toggle("open-navbar");
-    // body.classList.toggle("disable-scroll");
+    body.classList.toggle("disable-scroll");
   }
 });
 
 document.addEventListener('click', (e) => {
   let responsiveMenu = document.querySelector(".navbar-menu");
   let burgerBtn = document.querySelector(".burger-menu");
+  let body = document.querySelector("body");
 
   if(document.getElementById("navbar-menu").contains(e.target) || document.getElementById("burger-menu").contains(e.target)) {
     // do nothing
   } else {
     responsiveMenu.classList.remove('open-navbar')
     burgerBtn.classList.remove("close");
+    body.classList.remove("disable-scroll");
   }
 })
 
