@@ -15,7 +15,7 @@ document.addEventListener('click', (e) => {
   let burgerBtn = document.querySelector(".burger-menu");
 
   if(document.getElementById("navbar-menu").contains(e.target) || document.getElementById("burger-menu").contains(e.target)) {
-    console.log('adentro');
+    // do nothing
   } else {
     responsiveMenu.classList.remove('open-navbar')
     burgerBtn.classList.remove("close");
