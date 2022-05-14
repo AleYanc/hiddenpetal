@@ -492,9 +492,11 @@ body {
   
   .section-two {
     width: 90%;
+    
     .section-two-heading {
       font-size: 3.6rem;
     }
+
     .section-two-content {
       width: 90%;
       height: 90%;
@@ -505,6 +507,7 @@ body {
         height: 95%;
         width: 33%;
       }
+
       .one {
         font-size: 1.25rem;
         font-style: italic;
@@ -513,16 +516,6 @@ body {
 
         p {
           padding: 10px 50px;
-        }
-        &:before {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 800px;
-          top: 0;
-          left: -110%;
-          background-color: #d5e8c5;
-          z-index: -1;
         }
       }
 
@@ -534,13 +527,6 @@ body {
         }
       }
       .three {
-        .foto {
-          width: 360px;
-          height: 320px;
-        }
-        &:before {
-          right: -110%;
-        }
       }
     }
   }
