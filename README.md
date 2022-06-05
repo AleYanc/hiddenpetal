@@ -14,7 +14,7 @@ Current version: 2.0
 * [ ] Reorganize view files and compact code (where possible)
 * [ ] Improve JavaScript code
 
-## TO DO LIST (GITHUB)
+## TO DO LIST (GITHUB):
 * [ ] Squash and organize commits
 * [ ] Create a mirror branch
 * [ ] Create a staging branch
