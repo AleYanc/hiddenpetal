@@ -18,3 +18,8 @@ Current version: 2.0
 * [ ] Squash and organize commits
 * [ ] Create a mirror branch
 * [ ] Create a staging branch
+
+
+## BUGS TO FIX
+* [ ] Unknown bug (?) when clicking on the 'patterns' section
+* [ ] Category filter menu not opening at 80vw, instead it opens at 50vw, breaking the text inside the container
