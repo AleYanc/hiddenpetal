@@ -1,24 +1,20 @@
-# README
+# HIDDEN PETTAL
+Current version: 2.0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby version: '3.0.2'
+### Rails version: '6.1.4'
 
-Things you may want to cover:
+## TO DO LIST:
+* [x] Finish second version
+* [x] Improve designs
+* [ ] Finish responsive adaptation
+* [ ] Improve performance (and prepare for future deploy on custom server)
+* [ ] Improve code readability
+* [ ] Reorganize CSS files
+* [ ] Reorganize view files and compact code (where possible)
+* [ ] Improve JavaScript code
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TO DO LIST (GITHUB)
+* [ ] Squash and organize commits
+* [ ] Create a mirror branch
+* [ ] Create a staging branch
